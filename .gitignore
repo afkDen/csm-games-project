@@ -1,0 +1,38 @@
+node_modules/
+.npm-cache/
+.next/
+out/
+dist/
+coverage/
+playwright-report/
+test-results/
+.playwright/
+.playwright-cli/
+.env
+.env.*
+!.env.example
+
+# Raw owner-supplied / licensed source assets stay local by default.
+assets/source/**/*
+!assets/source/**/
+!assets/source/**/.gitkeep
+!assets/source/**/README.md
+
+# Local agent/tool workspaces
+scrollcraft/
+.tmp-*/
+.cache/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+
+# Optional third-party project skills installed by bootstrap-skills are local/reproducibility-sensitive.
+.agents/skills/design-taste-frontend/
+.agents/skills/andrej-karpathy-skill/
+.agents/skills/web-design-guidelines/
+.agents/skills/insecure-defaults/
+.agents/skills/differential-review/
+.agents/skills/scroll-craft/
+.agents/skills/img2threejs/
+.agents/skills/emil-design-eng/

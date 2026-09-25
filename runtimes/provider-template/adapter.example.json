@@ -1,0 +1,69 @@
+{
+  "adapter_schema_version": 2,
+  "runtime_id": "replace-me",
+  "provider": "replace-me",
+  "execution_mode": "native-subagents|external-orchestrator|manual-isolated",
+  "role_model_mapping": {
+    "controller": {
+      "model": "replace-me",
+      "profile": "high"
+    },
+    "experience-orchestrator": {
+      "model": "replace-me",
+      "profile": "high"
+    },
+    "orchestration-auditor": {
+      "model": "replace-me",
+      "profile": "high"
+    },
+    "production-implementer": {
+      "model": "replace-me",
+      "profile": "adaptive"
+    },
+    "implementation-reviewer": {
+      "model": "replace-me",
+      "profile": "high"
+    }
+  },
+  "capability_mapping": {
+    "filesystem.read": "replace-me",
+    "filesystem.write": "replace-me",
+    "command.exec": "replace-me",
+    "subagent.spawn_or_isolated_context": "replace-me",
+    "web.search": "optional",
+    "web.fetch": "optional",
+    "browser.inspect": "replace-me-or-BLOCKED",
+    "browser.automate": "optional",
+    "media.ffmpeg": "local-command-if-available",
+    "current_docs.lookup": "optional",
+    "image.generate": "optional",
+    "external_asset.search": "optional"
+  },
+  "isolation": {
+    "orchestration-auditor": "fresh-context-required",
+    "implementation-reviewer": "fresh-context-required"
+  },
+  "notes": [],
+  "reasoning_mapping": {
+    "high": {
+      "control_type": "replace-me",
+      "mapping": "strongest practical reasoning setting within declared run budget",
+      "record_exact_setting": true
+    },
+    "execution": {
+      "control_type": "replace-me",
+      "mapping": "strong implementation setting for well-specified work",
+      "record_exact_setting": true
+    },
+    "fast": {
+      "control_type": "replace-me",
+      "mapping": "bounded helper setting only",
+      "record_exact_setting": true
+    },
+    "adaptive": {
+      "control_type": "policy-selector",
+      "mapping": "resolve milestone complexity using docs/REASONING_POLICY.md, then choose high or execution",
+      "record_exact_setting": true
+    }
+  }
+}

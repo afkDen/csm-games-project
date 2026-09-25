@@ -1,0 +1,47 @@
+{
+  "name": "chainsaw-lens-experience-bootstrap",
+  "private": true,
+  "version": "7.0.0-frozen-baseline",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "init:preflight": "node scripts/preflight.mjs",
+    "adapters:sync": "node scripts/sync-runtime-adapters.mjs",
+    "portability:audit": "node scripts/validate-portable-core.mjs",
+    "bootstrap:verify": "node scripts/verify-setup.mjs",
+    "assets:validate": "node scripts/validate-assets.mjs",
+    "source-boundary:check": "node scripts/check-tracked-source-boundary.mjs",
+    "contracts:audit": "node scripts/audit-contracts.mjs",
+    "secrets:scan": "node scripts/scan-secrets.mjs",
+    "bootstrap:audit": "node scripts/run-audit.mjs",
+    "docs:check": "node scripts/check-doc-refs.mjs",
+    "capabilities:census": "node scripts/capability-census.mjs",
+    "agent-run:new": "node scripts/new-agent-run.mjs",
+    "agents:validate": "node scripts/validate-agent-system.mjs",
+    "media:doctor": "node scripts/media-doctor.mjs",
+    "runtime:validate": "node scripts/validate-runtime-adapters.mjs",
+    "skills:snapshot": "node scripts/external-skill-snapshot.mjs",
+    "experiment:new": "node scripts/new-provider-run.mjs",
+    "bootstrap:fingerprint": "node scripts/bootstrap-fingerprint.mjs",
+    "reasoning:validate": "node scripts/validate-reasoning-policy.mjs",
+    "experiment:validate": "node scripts/validate-experiment-run.mjs",
+    "state:validate": "node scripts/validate-project-state.mjs",
+    "process:validate": "node scripts/validate-process-tier-policy.mjs",
+    "source-assets:fingerprint": "node scripts/source-assets-fingerprint.mjs",
+    "owner-instructions:fingerprint": "node scripts/owner-instructions-fingerprint.mjs",
+    "experiment:lock": "node scripts/lock-experiment-run.mjs",
+    "experiment:lock:verify": "node scripts/verify-experiment-lock.mjs"
+  },
+  "dependencies": {
+    "next": "16.3.5",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.2",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "typescript": "7.0.2"
+  }
+}

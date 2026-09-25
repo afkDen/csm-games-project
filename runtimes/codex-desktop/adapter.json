@@ -1,0 +1,42 @@
+{
+  "adapter_schema_version": 2,
+  "runtime_id": "codex-desktop",
+  "provider": "openai",
+  "execution_mode": "native-subagents",
+  "portable_core": "portable/pipeline.manifest.json",
+  "role_model_mapping": {
+    "controller": { "model": "GPT-6 (desktop-selected variant not exposed)", "profile": "high" },
+    "experience-orchestrator": { "model": "gpt-6-astra", "profile": "high" },
+    "orchestration-auditor": { "model": "gpt-6-astra", "profile": "high" },
+    "production-implementer": { "model": "selected per milestone", "profile": "adaptive" },
+    "implementation-reviewer": { "model": "gpt-6-astra", "profile": "high" }
+  },
+  "capability_mapping": {
+    "filesystem.read": "exec_command and apply_patch",
+    "filesystem.write": "apply_patch and exec_command within workspace",
+    "command.exec": "exec_command",
+    "subagent.spawn_or_isolated_context": "collaboration.spawn_agent with fresh fork_turns=none for independent roles",
+    "web.search": "web.run search_query",
+    "web.fetch": "web.run open",
+    "browser.inspect": "Codex in-app browser through cua_repl",
+    "browser.automate": "cua_repl browser actions and browser Playwright API; local Playwright package unavailable",
+    "media.ffmpeg": "BLOCKED: ffmpeg/ffprobe commands unavailable at initialization",
+    "current_docs.lookup": "Context7 tools when applicable plus official documentation through web.run",
+    "image.generate": "image_gen available when an approved beat requires bitmap generation",
+    "external_asset.search": "web search and callable 21st catalog tools with provenance review; Pexels key configured, Kie API unconfigured"
+  },
+  "isolation": {
+    "orchestration-auditor": "fresh subagent context; repository artifacts only from orchestrator",
+    "implementation-reviewer": "fresh subagent context; repository artifacts only from implementer"
+  },
+  "reasoning_mapping": {
+    "high": { "control_type": "reasoning_effort", "mapping": "high for explicitly launched role agents", "record_exact_setting": true },
+    "execution": { "control_type": "reasoning_effort", "mapping": "medium or high per approved implementation packet", "record_exact_setting": true },
+    "fast": { "control_type": "reasoning_effort", "mapping": "low for bounded independently verifiable helpers only", "record_exact_setting": true },
+    "adaptive": { "control_type": "policy-selector", "mapping": "resolve from milestone complexity before implementation", "record_exact_setting": true }
+  },
+  "notes": [
+    "Controller's exact desktop model variant and effort are not surfaced; do not use this run as a fully controlled model benchmark.",
+    "At initial preflight no owner source assets or optional API credentials were present; later on 2026-09-25 the owner supplied ten PNGs and configured Pexels, 21st, and Context7 keys."
+  ]
+}

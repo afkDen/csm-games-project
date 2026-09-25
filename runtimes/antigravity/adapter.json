@@ -1,0 +1,45 @@
+{
+  "adapter_schema_version": 2,
+  "runtime_id": "antigravity",
+  "provider": "google",
+  "execution_mode": "native-subagents",
+  "portable_core": "portable/pipeline.manifest.json",
+  "compatibility_agent_root": ".agents/agents",
+  "compatibility_skill_root": ".agents/skills",
+  "capability_mapping": {
+    "filesystem.read": "view_file/list_dir/find_by_name/grep_search",
+    "filesystem.write": "write_to_file/replace_file_content/multi_replace_file_content",
+    "command.exec": "run_command",
+    "subagent.spawn_or_isolated_context": "invoke_subagent/manage_subagents",
+    "web.search": "search_web",
+    "web.fetch": "read_url_content",
+    "browser.inspect": "runtime browser + Playwright when available",
+    "browser.automate": "Playwright/browser tooling when available",
+    "media.ffmpeg": "run_command to local ffmpeg/ffprobe when available",
+    "current_docs.lookup": "configured MCP/docs connector or web",
+    "image.generate": "configured generation capability when available",
+    "external_asset.search": "asset-scout routed providers/web when approved"
+  },
+  "reasoning_mapping": {
+    "high": {
+      "control_type": "effort/model-variant",
+      "recommended": "select the strongest practical High reasoning configuration for the chosen model; for headless Gemini runs use an available high model slug and/or --effort high",
+      "record_exact_setting": true
+    },
+    "execution": {
+      "control_type": "effort/model-variant",
+      "recommended": "use a capable execution setting; Medium may be suitable for routine/substantial implementation, but resolve to High for critical milestones",
+      "record_exact_setting": true
+    },
+    "fast": {
+      "control_type": "effort/model-variant",
+      "recommended": "use only for bounded low-risk helper work, never independent audit/review or critical implementation",
+      "record_exact_setting": true
+    },
+    "adaptive": {
+      "control_type": "policy-selector",
+      "recommended": "classify implementation milestone first; routine/substantial -> execution unless a forced-high trigger fires; critical -> high",
+      "record_exact_setting": true
+    }
+  }
+}

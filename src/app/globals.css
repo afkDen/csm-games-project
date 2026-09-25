@@ -1,0 +1,8 @@
+:root { color-scheme: light; font-family: Arial, Helvetica, sans-serif; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+.shell { min-height: 100svh; display: grid; place-content: center; justify-items: center; padding: 2rem; text-align: center; background: radial-gradient(circle at 50% 38%, #fff9e8 0, #ffe8db 38%, #dfeffc 100%); color: #3b3440; }
+.lens { width: min(42vw, 12rem); aspect-ratio: 1; border: 1rem solid #fff9f0; border-radius: 50%; background: linear-gradient(135deg, #bce9ef99, #f9c7dd77); box-shadow: 0 0 0 1px #ffffffb0, 0 2rem 5rem #bc8ba34d, inset 0 0 2rem #ffffffbd; }
+.eyebrow { margin: 3rem 0 .5rem; font-size: .7rem; font-weight: 700; letter-spacing: .25em; }
+h1 { margin: 0; font-size: clamp(2.5rem, 8vw, 6rem); letter-spacing: -.065em; }
+.description { max-width: 24rem; margin: 1rem 0 0; line-height: 1.5; }

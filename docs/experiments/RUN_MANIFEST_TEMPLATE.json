@@ -1,0 +1,123 @@
+{
+  "run_id": "replace-me",
+  "bootstrap_version": "7.0.0",
+  "bootstrap_hash_or_commit": "replace-me",
+  "date": "YYYY-MM-DD",
+  "runtime": "replace-me",
+  "provider_mode": "single-provider|mixed-provider|manual-isolated",
+  "roles": {
+    "controller": {
+      "provider": "",
+      "model": "",
+      "reasoning": {
+        "requested_profile": "high",
+        "milestone_complexity": "not-applicable",
+        "resolved_profile": "high",
+        "provider_control": {
+          "type": "effort|budget|model-variant|none|other",
+          "value": "",
+          "budget": null,
+          "units": ""
+        },
+        "notes": "",
+        "forced_high_triggers": []
+      }
+    },
+    "experience-orchestrator": {
+      "provider": "",
+      "model": "",
+      "reasoning": {
+        "requested_profile": "high",
+        "milestone_complexity": "not-applicable",
+        "resolved_profile": "high",
+        "provider_control": {
+          "type": "effort|budget|model-variant|none|other",
+          "value": "",
+          "budget": null,
+          "units": ""
+        },
+        "notes": "",
+        "forced_high_triggers": []
+      }
+    },
+    "orchestration-auditor": {
+      "provider": "",
+      "model": "",
+      "reasoning": {
+        "requested_profile": "high",
+        "milestone_complexity": "not-applicable",
+        "resolved_profile": "high",
+        "provider_control": {
+          "type": "effort|budget|model-variant|none|other",
+          "value": "",
+          "budget": null,
+          "units": ""
+        },
+        "notes": "",
+        "forced_high_triggers": []
+      }
+    },
+    "production-implementer": {
+      "provider": "",
+      "model": "",
+      "reasoning": {
+        "requested_profile": "adaptive",
+        "milestone_complexity": "",
+        "resolved_profile": "",
+        "provider_control": {
+          "type": "effort|budget|model-variant|none|other",
+          "value": "",
+          "budget": null,
+          "units": ""
+        },
+        "notes": "",
+        "forced_high_triggers": []
+      }
+    },
+    "implementation-reviewer": {
+      "provider": "",
+      "model": "",
+      "reasoning": {
+        "requested_profile": "high",
+        "milestone_complexity": "not-applicable",
+        "resolved_profile": "high",
+        "provider_control": {
+          "type": "effort|budget|model-variant|none|other",
+          "value": "",
+          "budget": null,
+          "units": ""
+        },
+        "notes": "",
+        "forced_high_triggers": []
+      }
+    }
+  },
+  "capabilities": {},
+  "external_skills_or_connectors": [],
+  "permission_profile": "",
+  "constraints": {
+    "token_budget": null,
+    "time_budget": null,
+    "other": [],
+    "reasoning_budget_policy": ""
+  },
+  "source_assets_fingerprint": "",
+  "owner_instruction_fingerprint": "",
+  "results": {
+    "plan_audit_rounds": null,
+    "implementation_review_rounds": null,
+    "final_gate": "NOT_RUN",
+    "blockers": [],
+    "notes": [],
+    "reasoning_events": []
+  },
+  "external_skills_fingerprint": "",
+  "benchmark_rubric": "docs/PROVIDER_BENCHMARK_RUBRIC.md",
+  "experiment_mode": "best-capability",
+  "reasoning_policy_version": 1,
+  "process_tier_policy_version": 1,
+  "project_state_schema_version": 2,
+  "starting_process_tier": "major",
+  "lock_status": "NOT_LOCKED",
+  "lock_file": "RUN_LOCK.json"
+}

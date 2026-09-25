@@ -1,0 +1,156 @@
+{
+  "schema_version": 3,
+  "pipeline_version": "7.0.0",
+  "project": "chainsaw-lens-experience",
+  "portable_core": true,
+  "canonical_skill_root": "portable/skills",
+  "canonical_role_root": "portable/roles",
+  "roles": {
+    "controller": {
+      "prompt": "portable/roles/controller.md",
+      "reasoning_profile": "high",
+      "isolation": "state_owner"
+    },
+    "experience-orchestrator": {
+      "prompt": "portable/roles/experience-orchestrator.md",
+      "reasoning_profile": "high",
+      "isolation": "clean_context"
+    },
+    "orchestration-auditor": {
+      "prompt": "portable/roles/orchestration-auditor.md",
+      "reasoning_profile": "high",
+      "isolation": "independent_clean_context"
+    },
+    "production-implementer": {
+      "prompt": "portable/roles/production-implementer.md",
+      "reasoning_profile": "adaptive",
+      "isolation": "clean_context"
+    },
+    "implementation-reviewer": {
+      "prompt": "portable/roles/implementation-reviewer.md",
+      "reasoning_profile": "high",
+      "isolation": "independent_clean_context"
+    }
+  },
+  "loop": [
+    "controller",
+    "experience-orchestrator",
+    "orchestration-auditor",
+    "production-implementer",
+    "implementation-reviewer",
+    "controller"
+  ],
+  "limits": {
+    "plan_audit_rounds": 3,
+    "implementation_review_rounds": 3
+  },
+  "required_artifacts": [
+    "ORCHESTRATION_PACKET.md",
+    "CAPABILITY_ROUTING.md",
+    "ORCHESTRATION_AUDIT.md",
+    "IMPLEMENTATION_REPORT.md",
+    "IMPLEMENTATION_REVIEW.md"
+  ],
+  "logical_capabilities": {
+    "filesystem.read": "required",
+    "filesystem.write": "required",
+    "command.exec": "required",
+    "subagent.spawn_or_isolated_context": "required_for_full_pipeline",
+    "web.search": "conditional",
+    "web.fetch": "conditional",
+    "browser.inspect": "required_for_visual_milestones",
+    "browser.automate": "preferred_for_visual_milestones",
+    "media.ffmpeg": "conditional",
+    "current_docs.lookup": "conditional",
+    "image.generate": "conditional",
+    "external_asset.search": "conditional"
+  },
+  "contracts": [
+    "docs/CREATIVE_DIRECTION_CONTRACT.md",
+    "docs/CHARACTER_FIDELITY_MATRIX.md",
+    "docs/SCROLL_EXPERIENCE_CONTRACT.md",
+    "docs/TRANSITION_CONTINUITY_CONTRACT.md",
+    "docs/SPATIAL_DEPTH_CONTRACT.md",
+    "docs/WORLD_UNIQUENESS_CONTRACT.md",
+    "docs/PERFORMANCE_AND_QUALITY.md",
+    "docs/ASSET_SOURCING.md",
+    "docs/MEDIA_PIPELINE_FFMPEG.md",
+    "docs/RUNTIME_PORTABILITY_CONTRACT.md",
+    "docs/REASONING_POLICY.md",
+    "docs/PROCESS_TIER_POLICY.md",
+    "docs/EXPERIMENT_LOCK_CONTRACT.md"
+  ],
+  "portability": {
+    "runbook": "docs/PORTABLE_RUNBOOK.md",
+    "benchmark_rubric": "docs/PROVIDER_BENCHMARK_RUBRIC.md",
+    "experiment_manifest_template": "docs/experiments/RUN_MANIFEST_TEMPLATE.json",
+    "external_skills_policy": "runtime-visible optional input; fingerprint when benchmarking",
+    "experiment_lock": "docs/EXPERIMENT_LOCK_CONTRACT.md",
+    "experiment_lock_file": "docs/experiments/runs/<run-id>/RUN_LOCK.json"
+  },
+  "reasoning_policy": {
+    "contract": "docs/REASONING_POLICY.md",
+    "profiles": {
+      "high": "strongest practical reasoning configuration available within the declared run budget; prioritize depth, verification, and ambiguity resolution",
+      "execution": "strong implementation configuration for well-specified work; never synonymous with lowest-cost or no-reasoning mode",
+      "fast": "bounded helper/research profile only where mistakes are cheap and independently verifiable",
+      "adaptive": "selector resolved before implementation from milestone complexity; not a provider setting by itself"
+    },
+    "role_defaults": {
+      "controller": "high",
+      "experience-orchestrator": "high",
+      "orchestration-auditor": "high",
+      "production-implementer": "adaptive",
+      "implementation-reviewer": "high"
+    },
+    "implementation_complexity": {
+      "routine": "execution",
+      "substantial": "execution",
+      "critical": "high"
+    },
+    "forced_high_triggers": [
+      "new scroll/transition/spatial interaction architecture",
+      "cross-system state ownership or interruption/race debugging",
+      "novel WebGL/shader/camera choreography",
+      "portal/game/audio/media handoff architecture",
+      "material architecture change",
+      "repeated implementation-review failure",
+      "evidence contradicts the approved plan",
+      "high ambiguity with costly rework risk"
+    ],
+    "benchmark_modes": [
+      "best-capability",
+      "controlled-budget",
+      "custom"
+    ]
+  },
+  "state_authority": {
+    "canonical_file": "docs/PROJECT_STATE.md",
+    "schema_version": 2,
+    "writer": "controller",
+    "rule": "sole mutable project-resumption authority; detailed milestone artifacts remain evidence, not competing state"
+  },
+  "process_tier_policy": {
+    "contract": "docs/PROCESS_TIER_POLICY.md",
+    "skill": "portable/skills/process-tier-routing/SKILL.md",
+    "version": 1,
+    "tiers": {
+      "trivial": {
+        "path": "direct-implementation-plus-relevant-checks",
+        "independent_review": "conditional"
+      },
+      "normal": {
+        "path": "implementation-plus-independent-review",
+        "independent_review": "required"
+      },
+      "major": {
+        "path": "full-orchestrate-audit-implement-review-loop",
+        "independent_review": "required"
+      },
+      "architectural": {
+        "path": "full-loop-high-reasoning-implementation",
+        "independent_review": "required"
+      }
+    }
+  }
+}
