@@ -10,6 +10,8 @@ The final site should clearly state that it is an **unofficial portfolio concept
 
 The project owner plans to supply still images from the campaign/anime. Treat those files as copyrighted source material with rights that may differ from open stock assets.
 
+On 2026-09-25, after being told that the authoritative GitHub repository is public, the owner explicitly confirmed **“I have publication rights”** for the supplied anime stills and chibi images. This records the owner's permission assertion for publishing intentional derivatives in this repository; it does not establish creator identity, source URL, license terms, or rights for unrelated assets. Keep raw masters in `assets/source/` and record each derivative's lineage in the asset manifest.
+
 Before public release:
 
 - confirm which source images are actually being shipped;

@@ -1,6 +1,6 @@
 # Owner Input Inventory
 
-Reinspected on 2026-09-25 after owner supplied files. Ten PNG inputs are present. The `.gitkeep` and README files are placeholders, not production inputs. Dimensions and transparency were read locally; rights, creator, source URL, and public-use permission remain unconfirmed.
+Reinspected on 2026-09-25 after owner supplied files. Ten PNG inputs are present. The `.gitkeep` and README files are placeholders, not production inputs. Dimensions and transparency were read locally. On 2026-09-25 the owner explicitly asserted publication rights for these supplied stills and chibis, including intentional derivatives in the public GitHub repository; creator, source URL, and underlying license details remain unconfirmed. Raw masters remain private.
 
 | Relative path | Category | File type | Likely intended use | Provenance status | Production status |
 | --- | --- | --- | --- | --- | --- |
@@ -21,4 +21,4 @@ Default provenance for unannotated owner inputs: `OWNER-SUPPLIED / DETAILS UNCON
 
 Default production status: `RAW / NOT PUBLIC`.
 
-Do not infer a license, copyright owner, official source, or permission from filenames alone.
+Do not infer a license, copyright owner, or official source from filenames alone. The owner's publication-rights assertion is recorded above; it is not independent verification of provenance.

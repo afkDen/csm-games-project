@@ -17,7 +17,7 @@ Only the controller/state-owner updates this file during normal operation. Other
 - **Latest implementation review artifact:** `none`
 - **Active goal:** implement and independently review the approved Denji first slice, then close it with validated GitHub CI evidence
 - **Last verified checkpoint:** `2026-09-25: owner said “approved. proceed.”; approved Denji packet revision 2 and independent audit are production-authorized; origin/main at 410fe7bec681bc9992c1730ca5d2a757acc6c6e7 and GitHub CI run 36117198620 passed`
-- **Pending owner blocker:** `none for local production; public-use rights details remain unconfirmed for the release gate`
+- **Pending owner blocker:** `none for local production or intentional derivatives of the supplied stills/chibis; creator/source provenance details remain unconfirmed for release documentation`
 - **Resume target:** production implementer executes the approved Denji packet at architectural/high reasoning and writes implementation evidence; controller then launches fresh independent implementation review
 - **Latest owner directive:** use the lowest necessary process overhead on recovery; Controller handles routine Git/CI/repair tasks directly and reserves subagents for genuine major creative or architectural judgment; preserve the approved Denji production gate and creative contracts
 
@@ -72,3 +72,8 @@ Resume: retain the independent Denji plan approval boundary; no production imple
 Tier: architectural.
 Verified: owner gave the required first-slice green light; approved packet revision 2 and independent plan audit remain the baseline.
 Resume: implement Denji under `AUTOPILOT`, then commission a fresh independent implementation review.
+
+### 2026-09-25 — Supplied-art publication decision
+Tier: architectural rights boundary within active production.
+Verified: owner explicitly confirmed publication rights for the supplied stills and chibis after public GitHub visibility was disclosed; raw masters remain private and derivative lineage remains required.
+Resume: continue approved Denji implementation; obtain missing creator/source provenance before the final release gate.
