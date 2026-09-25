@@ -5,20 +5,20 @@ This file is the **sole mutable source of truth for current project/resume state
 Only the controller/state-owner updates this file during normal operation. Other roles read it and report proposed changes back to the controller.
 
 - **State schema version:** `2`
-- **Mode:** `AWAITING_FIRST_SLICE_APPROVAL`
-- **Phase:** `1 — independently audited first-slice plan complete`
+- **Mode:** `AUTOPILOT`
+- **Phase:** `2 — approved Denji first-slice production`
 - **Process tier:** `architectural`
-- **Active world:** `none — Denji plan approved, production awaiting owner green light`
+- **Active world:** `Denji`
 - **Active milestone:** `denji-first-slice`
-- **Active agent-loop stage:** `controller`
+- **Active agent-loop stage:** `implementing`
 - **Plan audit round:** `1`
 - **Implementation review round:** `0`
 - **Approved plan artifact:** `docs/agent-runs/denji-first-slice/ORCHESTRATION_PACKET.md` (revision 2); audit: `docs/agent-runs/denji-first-slice/ORCHESTRATION_AUDIT.md`
 - **Latest implementation review artifact:** `none`
-- **Active goal:** obtain the existing owner green light for the independently audited Denji first-slice plan
-- **Last verified checkpoint:** `2026-09-25: CI source-boundary finding repaired; bootstrap audit and production build passed locally; initial commit ea41afd2fcf9ca92ac7cd9c3e085fa3c9e98c6c1 pushed to origin/main; GitHub CI run 36117062983 passed`
-- **Pending owner blocker:** `Denji production awaits “Approved. Proceed.” or equivalent; public-use rights details remain unconfirmed for the release gate`
-- **Resume target:** after owner approval, read `APPROVE_AND_PROCEED.md` and `PRODUCTION_AUTOPILOT.md`, switch to `AUTOPILOT`, and execute the approved Denji packet through the audited production loop
+- **Active goal:** implement and independently review the approved Denji first slice, then close it with validated GitHub CI evidence
+- **Last verified checkpoint:** `2026-09-25: owner said “approved. proceed.”; approved Denji packet revision 2 and independent audit are production-authorized; origin/main at 410fe7bec681bc9992c1730ca5d2a757acc6c6e7 and GitHub CI run 36117198620 passed`
+- **Pending owner blocker:** `none for local production; public-use rights details remain unconfirmed for the release gate`
+- **Resume target:** production implementer executes the approved Denji packet at architectural/high reasoning and writes implementation evidence; controller then launches fresh independent implementation review
 - **Latest owner directive:** use the lowest necessary process overhead on recovery; Controller handles routine Git/CI/repair tasks directly and reserves subagents for genuine major creative or architectural judgment; preserve the approved Denji production gate and creative contracts
 
 ## Authority rules
@@ -67,3 +67,8 @@ Resume: <next exact target>
 Tier: normal operational recovery under the latest owner directive.
 Verified: `.gitignore` source placeholder repair, tracked-source boundary, local bootstrap audit/build, pushed `ea41afd2fcf9ca92ac7cd9c3e085fa3c9e98c6c1` on `main`, and passing GitHub CI run `36117062983`.
 Resume: retain the independent Denji plan approval boundary; no production implementation has started.
+
+### 2026-09-25 — Denji production authorization
+Tier: architectural.
+Verified: owner gave the required first-slice green light; approved packet revision 2 and independent plan audit remain the baseline.
+Resume: implement Denji under `AUTOPILOT`, then commission a fresh independent implementation review.
