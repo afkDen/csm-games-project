@@ -7,18 +7,18 @@ Only the controller/state-owner updates this file during normal operation. Other
 - **State schema version:** `2`
 - **Mode:** `AWAITING_FIRST_SLICE_APPROVAL`
 - **Phase:** `1 — independently audited first-slice plan complete`
-- **Process tier:** `normal`
+- **Process tier:** `architectural`
 - **Active world:** `none — Denji plan approved, production awaiting owner green light`
-- **Active milestone:** `github-ci-baseline`
-- **Active agent-loop stage:** `implementing`
+- **Active milestone:** `denji-first-slice`
+- **Active agent-loop stage:** `controller`
 - **Plan audit round:** `1`
 - **Implementation review round:** `0`
 - **Approved plan artifact:** `docs/agent-runs/denji-first-slice/ORCHESTRATION_PACKET.md` (revision 2); audit: `docs/agent-runs/denji-first-slice/ORCHESTRATION_AUDIT.md`
 - **Latest implementation review artifact:** `none`
-- **Active goal:** directly repair the CI baseline ignore rule, validate the initial Git index, and establish a durable initial GitHub commit while preserving the audited Denji production approval boundary
-- **Last verified checkpoint:** `2026-09-25: Denji plan independently approved; CI baseline packet revision 1 audited REVISE because source placeholder/readme paths are hidden by parent .gitignore pattern; origin verified empty and Actions enabled`
-- **Pending owner blocker:** `none for preproduction; public-use rights details remain unconfirmed for release gate`
-- **Resume target:** repair the confirmed CI finding directly, run local checks, commit/push, verify Actions, then await owner “Approved. Proceed.”
+- **Active goal:** obtain the existing owner green light for the independently audited Denji first-slice plan
+- **Last verified checkpoint:** `2026-09-25: CI source-boundary finding repaired; bootstrap audit and production build passed locally; initial commit ea41afd2fcf9ca92ac7cd9c3e085fa3c9e98c6c1 pushed to origin/main; GitHub CI run 36117062983 passed`
+- **Pending owner blocker:** `Denji production awaits “Approved. Proceed.” or equivalent; public-use rights details remain unconfirmed for the release gate`
+- **Resume target:** after owner approval, read `APPROVE_AND_PROCEED.md` and `PRODUCTION_AUTOPILOT.md`, switch to `AUTOPILOT`, and execute the approved Denji packet through the audited production loop
 - **Latest owner directive:** use the lowest necessary process overhead on recovery; Controller handles routine Git/CI/repair tasks directly and reserves subagents for genuine major creative or architectural judgment; preserve the approved Denji production gate and creative contracts
 
 ## Authority rules
@@ -62,3 +62,8 @@ Tier: <trivial|normal|major|architectural>
 Verified: <short evidence>
 Resume: <next exact target>
 ```
+
+### 2026-09-25 — GitHub CI baseline
+Tier: normal operational recovery under the latest owner directive.
+Verified: `.gitignore` source placeholder repair, tracked-source boundary, local bootstrap audit/build, pushed `ea41afd2fcf9ca92ac7cd9c3e085fa3c9e98c6c1` on `main`, and passing GitHub CI run `36117062983`.
+Resume: retain the independent Denji plan approval boundary; no production implementation has started.
